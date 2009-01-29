@@ -1,9 +1,6 @@
 jquery.tagcloud.js
 ==================
 
-jquery.tagcloud.js
-==================
-
 Usage
 -----
     <div id="whatever">
