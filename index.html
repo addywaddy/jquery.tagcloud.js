@@ -6,7 +6,29 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>addywaddy/jquery.tagcloud.js @ GitHub</title>
-	
+	<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.tagcloud.0-0-1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	 $(document).ready(function(){
+	   $("#tagcloud a").tagcloud();
+	   
+	   $('#tagForm').submit(function() {
+	     $("#tagcloud a").tagcloud({
+         size: {
+           start: parseInt($('#minFont').val()), 
+           end: parseInt($('#maxFont').val()), 
+           unit: $('#unit').val()
+         }, 
+         color: {
+           start: "#"+$('#startColour').val(), 
+           end: "#"+$('#endColour').val()
+         }
+       })
+       return false;
+     })
+   })
+   
+	</script>
 	<style type="text/css">
 		body {
   		margin-top: 1.0em;
@@ -29,6 +51,22 @@
 		pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+    
+    body {
+      text-align:center;
+    }
+    #tagcloud a {
+  	  text-decoration: none;
+  	}
+
+  	#tagcloud a:hover {
+  	  text-decoration: underline;
+  	}
+
+  	#tagcloud {
+  	  margin: 25px auto;
+  	  font: 75% Arial, "MS Trebuchet", sans-serif;
+  	}
 	</style>
 	
 </head>
@@ -45,29 +83,79 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
       
-    <h1><a href="http://github.com/addywaddy/jquery.tagcloud.js">jquery.tagcloud.js</a> 
-      <span class="small">by <a href="http://github.com/addywaddy">addywaddy</a></small></h1>
+    <h1>
+      <a href="http://github.com/addywaddy/jquery.tagcloud.js">jquery.tagcloud.js</a> 
+    </h1>
+    
+    <div id="demo">
+      <div id="tagcloud">
+        <a href="#" rel="0.1">Lorem</a>
+        <a href="#" rel="2">ipsum</a>
+        <a href="#" rel="3">dolor</a>
+        <a href="#" rel="4">sit</a>
+        <a href="#" rel="5">amet,</a>
+        <a href="#" rel="6">consectetur</a>
+        <a href="#" rel="7">adipisicing</a>
+        <a href="#" rel="8">elit,</a>
+        <a href="#" rel="5">sed</a>
+        <a href="#" rel="7">do</a>
+        <a href="#" rel="3">eiusmod</a>
+        <a href="#" rel="1">tempor</a>
+        <a href="#" rel="12">incididunt</a>
+        <a href="#" rel="1">ut</a>
+        <a href="#" rel="2">labore</a>
+        <a href="#" rel="5">et</a>
+        <a href="#" rel="7">dolore</a>
+        <a href="#" rel="1">magna</a>
+        <a href="#" rel="4">aliqua.</a>
+        <a href="#" rel="1">Ut</a>
+        <a href="#" rel="2">enim</a>
+        <a href="#" rel="10">ad</a>
+        <a href="#" rel="4">minim</a>
+        <a href="#" rel="1">veniam,</a>
+        <a href="#" rel="1">quis</a>
+        <a href="#" rel="8">nostrud</a>
+        <a href="#" rel="1">exercitation</a>
+        <a href="#" rel="3">ullamco</a>
+        <a href="#" rel="1">laboris</a>
+        <a href="#" rel="11">nisi</a>
+        <a href="#" rel="10">ut</a>
+        <a href="#" rel="3">aliquip</a>
+        <a href="#" rel="5">ex</a>
+        <a href="#" rel="1">ea</a>
+        <a href="#" rel="1">commodo</a>
+        <a href="#" rel="6">consequat.</a>
+        <a href="#" rel="1">Duis</a>
+        <a href="#" rel="1">aute</a>
+        <a href="#" rel="1">irure</a>
+        <a href="#" rel="1">dolor</a>
+        <a href="#" rel="1">in</a>
+        <a href="#" rel="1">reprehenderit</a>
+        <a href="#" rel="1">in</a>
+        <a href="#" rel="1">voluptate</a>
+        <a href="#" rel="1">velit</a>
+      </div>
+      <form action="#" method="get" accept-charset="utf-8" id="tagForm">
+        <h2>Font</h2>
+        <p>
+          <input type="text" value="14" id="minFont">
+          <label for="min">to </label><input type="text" value="18" id="maxFont">
+          <select name="unit" id="unit">
+            <option selected value="pt">pt</option>
+            <option value="px">px</option>
+            <option value="em">em</option>        
+          </select>
+        </p>
+        <h2>Colour Gradient</h2>
+        <p>
+          <label># </label>
+          <input type="text" value="CDE" id="startColour">
+          <label>to # </label><input type="text" value="F52" id="endColour">
+        </p>
 
-    <div class="description">
-      A Simple Tag Cloud Plugin for JQuery
+        <p><input type="submit" value="Rebuild Cloud"></p>
+      </form>
     </div>
-
-    <h2>Authors</h2>
-<p>Adam Groves (adam.groves@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Adam Groves (adam.groves@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/addywaddy/jquery.tagcloud.js/zipball/master">zip</a> or
-      <a href="http://github.com/addywaddy/jquery.tagcloud.js/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/addywaddy/jquery.tagcloud.js</pre>
-    </p>
       
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/addywaddy/jquery.tagcloud.js">addywaddy/jquery.tagcloud.js</a>
