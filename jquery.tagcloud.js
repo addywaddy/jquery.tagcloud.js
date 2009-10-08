@@ -43,22 +43,22 @@
 
   // Converts an RGB array to hex
   function toHex (ary) {
-    return "#" + jQuery.map(ary, function(int) {
-      hex =  int.toString(16);
+    return "#" + jQuery.map(ary, function(i) {
+      hex =  i.toString(16);
       hex = (hex.length == 1) ? "0" + hex : hex;
       return hex;
     }).join("");
   }
 
   function colorIncrement (color, range) {
-    return jQuery.map(toRGB(color.end), function(int, i) {
-      return (int - toRGB(color.start)[i])/range;
+    return jQuery.map(toRGB(color.end), function(n, i) {
+      return (n - toRGB(color.start)[i])/range;
     });
   }
 
   function tagColor (color, increment, weighting) {
-    rgb = jQuery.map(toRGB(color.start), function(int, i) {
-      ref = Math.round(int + (increment[i] * weighting));
+    rgb = jQuery.map(toRGB(color.start), function(n, i) {
+      ref = Math.round(n + (increment[i] * weighting));
       if (ref > 255) {
         ref = 255;
       } else {
