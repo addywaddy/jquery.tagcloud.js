@@ -9,6 +9,7 @@
     lowest = tagWeights[0];
     highest = tagWeights.pop();
     range = highest - lowest;
+    if(range == 0) {range = 1};
     // Sizes
     if (opts.size) {
       fontIncr = (opts.size.end - opts.size.start)/range;
