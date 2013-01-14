@@ -18,7 +18,7 @@
   // Converts hex to an RGB array
   var toRGB = function(code) {
     if (code.length === 4) {
-      code = jQuery.map(/\w+/.exec(code), function(el) {return el + el; }).join("");
+      code = code.replace(/(\w)(\w)(\w)/gi, "\$1\$1\$2\$2\$3\$3");
     }
     var hex = /(\w{2})(\w{2})(\w{2})/.exec(code);
     return [parseInt(hex[1], 16), parseInt(hex[2], 16), parseInt(hex[3], 16)];
