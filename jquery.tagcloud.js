@@ -89,4 +89,4 @@
     size: {start: 14, end: 18, unit: "pt"}
   };
 
-})(jQuery || Zepto);
+})(window.jQuery || window.Zepto);
