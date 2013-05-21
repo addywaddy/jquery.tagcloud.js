@@ -1,8 +1,6 @@
 jquery.tagcloud.js
 ==================
 
-A simple tag cloud plugin for jQuery & Zepto.
-
 Usage
 -----
     <div id="whatever">
