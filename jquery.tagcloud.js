@@ -58,7 +58,7 @@
 
     var opts = $.extend({}, $.fn.tagcloud.defaults, options);
     var tagWeights = this.map(function(){
-      return $(this).attr("rel");
+      return $(this).data("weight");
     });
     tagWeights = jQuery.makeArray(tagWeights).sort(compareWeights);
     var lowest = tagWeights[0];
@@ -75,7 +75,7 @@
       colorIncr = colorIncrement (opts.color, range);
     }
     return this.each(function() {
-      var weighting = $(this).attr("rel") - lowest;
+      var weighting = $(this).data("weight") - lowest;
       if (opts.size) {
         $(this).css({"font-size": opts.size.start + (weighting * fontIncr) + opts.size.unit});
       }
