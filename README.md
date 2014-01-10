@@ -57,4 +57,4 @@ Initialize the tagcloud plugin.
      
 Demo
 ----
-[Check it out here](http://addywaddy.github.com/jquery.tagcloud.js/ "jquery.tagcloud.js Demo").
+[Check it out here](http://godspeed1715.github.com/jquery.tagcloud.js/ "jquery.tagcloud.js Demo").
