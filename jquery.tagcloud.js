@@ -53,7 +53,7 @@
                sTagCloudHTML += '<a href="#" ' + ((oOptions.sWeightSelector == "rel") && "rel" ||
                                                  (oOptions.sWeightSelector == "data-weight") && "data-weight") + '="' + oOptions.oData[x].weight + '"> ' + oOptions.oData[x].value + '</a>';
             }
-          $( this ).append(sTagCloudHTML);
+          $( this ).html(sTagCloudHTML);
         }
 
         var tagWeights = $(this).find(oOptions.sSelector).map(function () {
