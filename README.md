@@ -48,7 +48,7 @@ Usage without JSON data:
     Initialize the tagcloud plugin.
     
     $(function () {
-        $('#tagcloudwithJSON').tagcloud();
+        $('#tagcloudwithoutJSON').tagcloud();
     });
       
      
