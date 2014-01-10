@@ -13,7 +13,7 @@
     $.fn.tagcloud = function (options) {
         var oOptions = $.extend({
             sSelector: "a",
-            sWeightSelector: "data-weight",
+            sWeightSelector: "rel",
             bJson: false,
             oData: [],
             aSize: {
