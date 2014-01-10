@@ -1,15 +1,17 @@
 jquery.tagcloud.js
 ==================
 
-Usage with JSON data:
 
-    Create a new div element with a unique ID.
+Usage with JSON data:
+-----
+
+Create a new div element with a unique ID.
     
     <div id="tagcloudwithJSON">
     </div>
 
 
-    Create the JSON data.
+Create the JSON data.
     
     var oJsonData = [{"weight":"0.1","value":"Lorem"},
         {"weight":"2","value":"ipsum"},
@@ -21,7 +23,7 @@ Usage with JSON data:
     ];
 
 
-    Initialize the tagcloud plugin.
+Initialize the tagcloud plugin.
 
     $(function () {
       $('#tagcloudwithJSON').tagcloud({
@@ -33,8 +35,9 @@ Usage with JSON data:
 
 
 Usage without JSON data:
+-----
 
-    Create a new div element with a unique ID.
+Create a new div element with a unique ID.
     
     <div id="tagcloudwithoutJSON">
         <a href="#" rel="0.1">Lorem</a>
@@ -45,7 +48,7 @@ Usage without JSON data:
     </div>
     
     
-    Initialize the tagcloud plugin.
+Initialize the tagcloud plugin.
     
     $(function () {
         $('#tagcloudwithoutJSON').tagcloud();
