@@ -1,0 +1,22 @@
+{
+  "name": "jquery-tagcloud-js",
+  "version": "1.0.0",
+  "description": "A Simple Tag Cloud Plugin for JQuery",
+  "main": "jquery.tagcloud.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/addywaddy/jquery.tagcloud.js.git"
+  },
+  "keywords": [
+    "jquery",
+    "tagcloud"
+  ],
+  "author": {
+    "name": "Adam Groves",
+    "email": "adam.groves@gmail.com"
+  },
+  "license": "SEE LICENSE IN <LICENSE>"
+}
