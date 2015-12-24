@@ -58,7 +58,8 @@
 
     var opts = $.extend({}, $.fn.tagcloud.defaults, options);
     var tagWeights = this.map(function(){
-      return $(this).attr("rel");
+      return ((opts.weightselector == "rel") && $( this ).attr('rel') ||
+              (opts.weightselector == "data-weight") && $( this ).data('weight'));
     });
     tagWeights = jQuery.makeArray(tagWeights).sort(compareWeights);
     var lowest = tagWeights[0];
@@ -75,7 +76,8 @@
       colorIncr = colorIncrement (opts.color, range);
     }
     return this.each(function() {
-      var weighting = $(this).attr("rel") - lowest;
+      var weighting = ((opts.weightselector == "rel") && $( this ).attr('rel') ||
+                      (opts.weightselector == "data") && $( this ).data('weight')) - lowest;
       if (opts.size) {
         $(this).css({"font-size": opts.size.start + (weighting * fontIncr) + opts.size.unit});
       }
@@ -86,7 +88,8 @@
   };
 
   $.fn.tagcloud.defaults = {
-    size: {start: 14, end: 18, unit: "pt"}
+    size: {start: 14, end: 18, unit: "pt"},
+    weightselector: "rel"
   };
 
 })(jQuery);
