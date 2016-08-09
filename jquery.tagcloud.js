@@ -54,7 +54,7 @@
     return toHex(rgb);
   };
 
-  $.fn.tagcloud = function(options) {
+  $.fn.tagcloud = function(options, callback) {
 
     var opts = $.extend({}, $.fn.tagcloud.defaults, options);
     var tagWeights = this.map(function(){
@@ -74,7 +74,8 @@
     if (opts.color) {
       colorIncr = colorIncrement (opts.color, range);
     }
-    return this.each(function() {
+    
+    this.each(function() {
       var weighting = $(this).attr("rel") - lowest;
       if (opts.size) {
         $(this).css({"font-size": opts.size.start + (weighting * fontIncr) + opts.size.unit});
@@ -83,6 +84,11 @@
         $(this).css({"color": tagColor(opts.color, colorIncr, weighting)});
       }
     });
+    
+    // Make sure the callback is a function before calling it!
+    if (typeof callback === "function") {
+      callback(options);
+    }
   };
 
   $.fn.tagcloud.defaults = {
