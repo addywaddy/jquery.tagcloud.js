@@ -1,13 +1,13 @@
 /*!
- * jquery.tagcloud.js
- * A Simple Tag Cloud Plugin for JQuery
+ * jQuery.tagcloud.js
+ * A Simple Tag Cloud Plugin for jQuery & Zepto
  *
  * https://github.com/addywaddy/jquery.tagcloud.js
  * created by Adam Groves
  */
 (function($) {
 
-  /*global jQuery*/
+  /*global Zepto*/
   "use strict";
 
   var compareWeights = function(a, b)
@@ -26,7 +26,7 @@
 
   // Converts an RGB array to hex
   var toHex = function(ary) {
-    return "#" + jQuery.map(ary, function(i) {
+    return "#" + Zepto.map(ary, function(i) {
       var hex =  i.toString(16);
       hex = (hex.length === 1) ? "0" + hex : hex;
       return hex;
@@ -34,13 +34,13 @@
   };
 
   var colorIncrement = function(color, range) {
-    return jQuery.map(toRGB(color.end), function(n, i) {
+    return Zepto.map(toRGB(color.end), function(n, i) {
       return (n - toRGB(color.start)[i])/range;
     });
   };
 
   var tagColor = function(color, increment, weighting) {
-    var rgb = jQuery.map(toRGB(color.start), function(n, i) {
+    var rgb = Zepto.map(toRGB(color.start), function(n, i) {
       var ref = Math.round(n + (increment[i] * weighting));
       if (ref > 255) {
         ref = 255;
@@ -60,7 +60,7 @@
     var tagWeights = this.map(function(){
       return $(this).attr("data-weight");
     });
-    tagWeights = jQuery.makeArray(tagWeights).sort(compareWeights);
+    tagWeights = Array.prototype.slice.call(tagWeights, 0).sort(compareWeights);
     var lowest = tagWeights[0];
     var highest = tagWeights.pop();
     var range = highest - lowest;
@@ -89,4 +89,4 @@
     size: {start: 14, end: 18, unit: "pt"}
   };
 
-})(jQuery);
+})(Zepto);
