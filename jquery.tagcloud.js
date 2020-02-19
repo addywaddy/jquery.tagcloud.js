@@ -80,13 +80,19 @@
         $(this).css({"font-size": opts.size.start + (weighting * fontIncr) + opts.size.unit});
       }
       if (opts.color) {
-        $(this).css({"color": tagColor(opts.color, colorIncr, weighting)});
+      	if(opts.background){
+      		$(this).css({"backgroundColor": tagColor(opts.color, colorIncr, weighting)});
+      	}else{
+      		$(this).css({"color": tagColor(opts.color, colorIncr, weighting)});
+      	}
+        
       }
     });
   };
 
   $.fn.tagcloud.defaults = {
-    size: {start: 14, end: 18, unit: "pt"}
+    size: {start: 14, end: 18, unit: "pt"},
+    background: false
   };
 
 })(jQuery);
